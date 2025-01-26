@@ -1,8 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Página inicial";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div id="welcome-section">
+        <h3 class="display-4">Smart Parking</h3>
+        <p>Esta plataforma tem o objetivo de facilitar o estacionamento em tempo real. Aqui você pode decidir quando e onde estacionar antes de sair de casa.</p>
+    </div>
+    <div id="matrix-example">
+        <p><b>Shopping Partage</b></p>
+        <table class="table-center d-flex justify-content-center">
+            @for (int i = 0; i < 2; i++)
+            {
+                <tr class="row" style="height: 70px;">
+                    @for (int j = 0; j < 12; j++) {
+                        @if (j == 3 && i == 1)
+                        {
+                            <td class="border-1 col-1 bg-success" style="width: 40px;"></td>
+                        }
+                        else
+                        {
+                            <td class="border-1 col-1 bg-danger" style="width: 40px;"></td>
+                        }
+                    }
+                </tr>
+            }
+        </table>
+        <br />
+        <br />
+        <table class="table-center d-flex justify-content-center">
+            @for (int i = 0; i < 2; i++)
+            {
+                <tr class="row" style="height: 70px;">
+                    @for (int j = 0; j < 12; j++)
+                    {
+                        @if (j == 1 && i == 1 || j == 8 && i == 0 || j == 4 && i == 0) {
+                            <td class="border-1 col-1 bg-success" style="width: 40px;"></td>
+                        } else {
+                            <td class="border-1 col-1 bg-danger" style="width: 40px;"></td>
+                        }
+                    }
+                </tr>
+            }
+        </table>
+    </div>
 </div>
